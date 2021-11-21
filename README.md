@@ -13,7 +13,7 @@ python3 controller.py           # Run server
 ## Api
 * Get all contacts: `GET https://localhost:5000/agenda`
   * Response:
-    ```
+    ```json
     {
       "success": true,
       "agenda": [
@@ -29,7 +29,7 @@ python3 controller.py           # Run server
     ```
 * Add one contact:  `POST https://localhost:5000/agenda`
   * Request:
-    ```
+    ```json
     {
       "name": "Luiz",
       "phone": "1293814082304",
@@ -38,7 +38,7 @@ python3 controller.py           # Run server
     }
     ```
   * Response:
-    ```
+    ```json
     {
       "success": true,
       "contact": {
@@ -51,7 +51,7 @@ python3 controller.py           # Run server
     ```
 * Delete one contact:  `DELETE https://localhost:5000/agenda/<contact_id>`
   * Response:
-    ```
+    ```json
     {
       "success": true
     }

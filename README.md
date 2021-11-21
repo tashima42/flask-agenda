@@ -16,7 +16,7 @@ python3 controller.py           # Run server
     ```json
     {
       "success": true,
-      "agenda": [
+      "contacts": [
         {
           "id": 1,
           "name": "Joao",

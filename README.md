@@ -2,13 +2,13 @@
 ___
 ## Dev
 Before starting: 
-```
-pip install virtualenv
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python3 migrations.py
-python3 api.py
+```bash
+pip install virtualenv          # Install virtual enviroment tool
+virtualenv venv                 # Start a virtual environment
+source venv/bin/activate        # Activate virtual environment
+pip install -r requirements.txt # Install requirements
+python3 migrations.py           # Run migrations
+python3 controller.py           # Run server
 ```
 ## Api
 * Get all contacts: `GET https://localhost:5000/agenda`

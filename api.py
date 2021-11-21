@@ -8,18 +8,18 @@ db = Db()
 
 class Agenda(Resource):
   def get(self):
-    persons = db.getPersons()
-    return { "success": True, "agenda": persons }
+    contacts = db.getContacts()
+    return { "success": True, "contacts": contacts }
   def post(self):
     request_data = request.get_json()
     name = request_data["name"]
     phone = request_data["phone"]
     phoneType = request_data["phoneType"]
     favorite = request_data["favorite"]
-    db.addPerson(name, phone, phoneType, favorite)
+    db.addContact(name, phone, phoneType, favorite)
     return { 
             "success": True, 
-            "person": { 
+            "contact": { 
               "name": name, 
               "phone": phone, 
               "phoneType": phoneType, 
@@ -28,15 +28,13 @@ class Agenda(Resource):
             }
 
 class AgendaContact(Resource):
-  def get(self, id):
-    return db.getPersonById(id)
   def delete(self, id):
-    db.deletePerson(id)
+    db.deleteContact(id)
     return { "success": True }
     
 
-api.add_resource(Agenda, '/')
-api.add_resource(AgendaContact, '/<id>')
+api.add_resource(Agenda, '/agenda')
+api.add_resource(AgendaContact, '/agenda/<id>')
 
 if __name__ == '__main__':
     app.run(debug=True)

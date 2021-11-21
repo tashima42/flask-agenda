@@ -16,20 +16,17 @@ class Db:
   def __init__(self):
     self._db()
 
-  def getPersons(self):
-    persons =  self._query_db('SELECT * FROM person')
-    return persons
-  def getPersonById(self, person_id):
-    person =  self._query_db('SELECT * FROM person WHERE id = ?', (person_id))
-    return person
-  def addPerson(self, name, phone, phoneType, favorite):
+  def getContacts(self):
+    contact =  self._query_db('SELECT * FROM contact')
+    return contact
+  def addContact(self, name, phone, phoneType, favorite):
     self.db.execute(
-      'INSERT INTO person (name, phone, phoneType, favorite) VALUES (?, ?, ?, ?)', 
+      'INSERT INTO contact (name, phone, phoneType, favorite) VALUES (?, ?, ?, ?)', 
       (name, phone, phoneType, favorite)
     )
     self.db.commit()
-  def deletePerson(self, person_id):
-    self.db.execute('DELETE FROM person WHERE id=?', (person_id))
+  def deleteContact(self, contact_id):
+    self.db.execute('DELETE FROM contact WHERE id=?', (contact_id))
     self.db.commit()
 
 def _make_dicts(cursor, row):

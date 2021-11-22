@@ -1,11 +1,10 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
-from model import Db
 from controller import Agenda
 
 app = Flask(__name__)
 api = Api(app)
-db = Db()
+
 agenda = Agenda()
 
 class Contacts(Resource):

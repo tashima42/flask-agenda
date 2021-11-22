@@ -7,7 +7,7 @@ pip install virtualenv          # Install virtual enviroment tool
 virtualenv venv                 # Start a virtual environment
 source venv/bin/activate        # Activate virtual environment
 pip install -r requirements.txt # Install requirements
-python3 view.py           # Run server
+python3 view.py                 # Run server
 ```
 ## Api
 * Get all contacts: `GET https://localhost:5000/agenda`

@@ -29,6 +29,8 @@ class Db:
     db = sqlite3.connect(DATABASE, check_same_thread=False)
     db.row_factory = _make_dicts
     self.db = db  
+    self.db.execute("CREATE TABLE IF NOT EXISTS contact (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone TEXT, phoneType TEXT, favorite INTEGER)")
+    self.db.commit()
   def _query_db(self, query, args=(), one=False):
     cur = self.db.execute(query, args)
     rv = cur.fetchall()
